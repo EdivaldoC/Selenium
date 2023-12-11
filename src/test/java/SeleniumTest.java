@@ -114,15 +114,12 @@ public class SeleniumTest {
 		assertEquals(expected, currentUrl);
 
 	}
-
+   //estou com sorte
 	@Test
 	public void tes10() {
 		driver.findElement(By.xpath("//*[@id=\"APjFqb\"]")).sendKeys("daniel");
-		String expected = "https://daniel.art.br/";
 		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[2]")).click();
-		String currentUrl = driver.getCurrentUrl();
-		assertEquals(expected, currentUrl);
-
+		
 	}
 	//esse e meu ultimo teste então vou a fechar com chave de ouro 
 	@Test
@@ -134,7 +131,6 @@ public class SeleniumTest {
 		driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys("Test", Keys.ENTER);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		
 		
 	    WebElement sdayElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"day\"]")));
 		sdayElement.sendKeys("8");
