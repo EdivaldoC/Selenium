@@ -130,7 +130,7 @@ public class SeleniumTest {
 		driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys("selenium", Keys.ENTER);
 		driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys("Test", Keys.ENTER);
 		
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		
 	    WebElement sdayElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"day\"]")));
 		sdayElement.sendKeys("8");
