@@ -13,6 +13,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumTest {
 
@@ -64,7 +67,6 @@ public class SeleniumTest {
 
 	@Test
 	public void test5() {
-		driver.get("https://google.com");
 		boolean naoestala = !driver.findElement(By.id("hplogo")).isDisplayed();
 		assertFalse(naoestala);
 
@@ -120,6 +122,33 @@ public class SeleniumTest {
 		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[2]")).click();
 		String currentUrl = driver.getCurrentUrl();
 		assertEquals(expected, currentUrl);
+
+	}
+	//esse e meu ultimo teste então vou a fechar com chave de ouro 
+	@Test
+	public void test13(){
+		driver.findElement(By.xpath("//*[@id=\"gb\"]/div/div[2]/a/span")).click();
+		driver.findElement(By.xpath("//*[@id=\"yDmH0d\"]/c-wiz/div/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div/button/span")).click();
+		driver.findElement(By.xpath("//*[@id=\"yDmH0d\"]/c-wiz/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/div/ul/li[1]/span[2]")).click();
+		driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys("selenium", Keys.ENTER);
+		driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys("Test", Keys.ENTER);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		
+		
+	    WebElement sdayElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"day\"]")));
+		sdayElement.sendKeys("8");
+
+	    WebElement searElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"year\"]")));
+		searElement.sendKeys("2004");
+	
+		WebElement sElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"month\"]")));
+		Select selectmoth = new Select(sElement);
+		selectmoth.selectByIndex(6);
+		
+		WebElement selectElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"gender\"]")));
+		Select selectgender = new Select(selectElement);
+		selectgender.selectByIndex(2);
 
 	}
 
