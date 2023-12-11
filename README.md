@@ -33,3 +33,6 @@ Este projeto contém testes automatizados usando o Selenium WebDriver para inter
 
 ### Teste 10 - Pesquisa por "Daniel" e Verificação da URL
 - **Descrição:** O teste realiza uma pesquisa por "Daniel" no Google, clica no primeiro resultado e verifica se a URL corresponde ao site esperado.
+
+
+# tanto o test 6 quanto o teste 13 eles podem dar erro mas isso ou e porque a internt esta lenta e o codigo ele roda muito rapido 

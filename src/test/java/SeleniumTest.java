@@ -71,7 +71,7 @@ public class SeleniumTest {
 		assertFalse(naoestala);
 
 	}
-
+	// sua internt pode influenciar esse teste pois ele vai muito rapido e atualização da pagina demora e ele não consegue achar a url certa
 	@Test
 	public void test6() {
 		Actions actions = new Actions(driver);
@@ -122,6 +122,7 @@ public class SeleniumTest {
 		
 	}
 	//esse e meu ultimo teste então vou a fechar com chave de ouro 
+	// sua internt pode influenciar esse teste pois ele vai muito rapido e atualização da pagina demora e ele não consegue achar o elemento 
 	@Test
 	public void test13(){
 		driver.findElement(By.xpath("//*[@id=\"gb\"]/div/div[2]/a/span")).click();
